@@ -1,0 +1,25 @@
+.root {
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 5vh, 5vh, 5vh, 5vh;
+}
+
+.card {
+    width: 100%;
+}
+
+.menuButton {
+    margin-right: 30px;
+}
+
+.hide {
+    display: "none";
+}
+
+.routeLink {
+    color: inherit;
+    text-decoration: inherit;
+}
