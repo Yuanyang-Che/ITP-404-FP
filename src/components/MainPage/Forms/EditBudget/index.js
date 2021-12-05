@@ -78,7 +78,7 @@ export default function EditBudget() {
         history.push("/");
       }
     })();
-  });
+  }, [authContext.userID, history]);
 
   const onInputChange = (e) => {
     const target = e.target;

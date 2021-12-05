@@ -154,7 +154,7 @@ export default function DebtCard() {
       <CardContent>
         <ButtonGroup variant="contained" color="secondary" fullWidth>
           <Button startIcon={<EditIcon />}>
-            <Link to={`${match.path}/editdebt`} className={classes.routeLink}>
+            <Link to={`${match.path}editdebt`} className={classes.routeLink}>
               Edit Debt Relation
             </Link>
           </Button>

@@ -62,6 +62,7 @@ export default function BudgetCard() {
   const match = useRouteMatch();
   const authContext = useContext(AuthContext);
   const [debtInfo, setDebtInfo] = useState({
+    id: "",
     username: "Loading...",
     amount: "Loading...",
   });
@@ -75,6 +76,7 @@ export default function BudgetCard() {
 
       if (response.data.status_code === 200) {
         setDebtInfo({
+          id: response.data.id,
           username: response.data.username,
           amount: response.data.amount.toFixed(2),
         });
@@ -84,7 +86,7 @@ export default function BudgetCard() {
           amount: "Please Add New Debt",
         });
       } else {
-        alert("relationcard get-highest-debt "+response.data.message);
+        alert("relationcard get-highest-debt " + response.data.message);
       }
 
       const totalDebt_response = await UserAccess.post("/get-total-debt.php", {
@@ -103,7 +105,7 @@ export default function BudgetCard() {
       } else if (totalDebt_response.data.status_code === 500) {
         setBalance(0);
       } else {
-        alert("relationcard get-total-debt "+totalDebt_response.data.message);
+        alert("relationcard get-total-debt " + totalDebt_response.data.message);
       }
     })();
   }, [authContext.userID]);
@@ -165,7 +167,13 @@ export default function BudgetCard() {
       <CardContent>
         <ButtonGroup variant="contained" color="secondary" fullWidth>
           <Button startIcon={<EditIcon />}>
-            <Link to={`${match.path}/editdebt`} className={classes.routeLink}>
+            <Link
+              to={{
+                pathname: `${match.path}editdebt`,
+                search: `?id=${debtInfo.id}`,
+              }}
+              className={classes.routeLink}
+            >
               Edit This Person's Debt
             </Link>
           </Button>

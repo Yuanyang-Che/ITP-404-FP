@@ -162,14 +162,14 @@ export default function BudgetCard() {
       <CardContent>
         <ButtonGroup variant="contained" color="secondary" fullWidth>
           <Button startIcon={<QueueIcon />}>
-            <Link to={`${match.path}/addnewbill`} className={classes.routeLink}>
+            <Link to={`${match.path}addnewbill`} className={classes.routeLink}>
               Add a New Bill
             </Link>
           </Button>
           <Button startIcon={<EditIcon />}>
             <Link
               to={{
-                pathname: `${match.path}/editbill`,
+                pathname: `${match.path}editbill`,
                 search: `?id=${billInfo.bill_id}`,
               }}
               className={classes.routeLink}
@@ -180,7 +180,7 @@ export default function BudgetCard() {
           <Button startIcon={<DeleteForeverIcon />}>
             <Link
               to={{
-                pathname: `${match.path}/removebill`,
+                pathname: `${match.path}removebill`,
                 search: `?id=${billInfo.bill_id}`,
               }}
               className={classes.routeLink}

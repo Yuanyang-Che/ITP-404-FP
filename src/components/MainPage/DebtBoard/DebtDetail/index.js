@@ -101,7 +101,7 @@ export default function DebtDetail(props) {
               color="textSecondary"
               gutterBottom
             >
-              Debt Amount id={id}
+              Debt Amount
             </Typography>
             <Typography
               variant="h5"

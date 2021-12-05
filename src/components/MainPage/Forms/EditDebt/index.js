@@ -80,7 +80,7 @@ export default function EditDebt() {
 
         if (response.data.status_code === 200) {
           setInput({
-            amount: response.data.debt.amount,
+            //amount: response.data.debt.amount,
             people: response.data.debt.receiver_id,
           });
         } else {
@@ -100,7 +100,7 @@ export default function EditDebt() {
         history.push("/");
       }
     })();
-  }, [authContext.userID, history]);
+  }, [authContext.userID, debtID, history]);
 
   const getUserList = () => {
     const users = userList

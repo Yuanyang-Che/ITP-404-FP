@@ -165,12 +165,12 @@ export default function BudgetCard() {
       <CardContent>
         <ButtonGroup variant="contained" color="secondary" fullWidth>
           <Button startIcon={<EditIcon />}>
-            <Link to={`${match.path}/newbudget`} className={classes.routeLink}>
+            <Link to={`${match.path}editbudget`} className={classes.routeLink}>
               Add New Current Month Budget
             </Link>
           </Button>
           <Button startIcon={<TrendingUpIcon />}>
-            <Link to={`${match.path}/editbudget`} className={classes.routeLink}>
+            <Link to={`${match.path}editbudget`} className={classes.routeLink}>
               Edit Current Month Budget Target
             </Link>
           </Button>
